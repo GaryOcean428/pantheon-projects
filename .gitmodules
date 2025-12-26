@@ -1,0 +1,9 @@
+[submodule "SearchSpaceCollapse"]
+	path = SearchSpaceCollapse
+	url = https://github.com/GaryOcean428/SearchSpaceCollapse.git
+[submodule "pantheon"]
+	path = pantheon
+	url = https://github.com/GaryOcean428/pantheon.git
+[submodule "pantheon-chat"]
+	path = pantheon-chat
+	url = https://github.com/Arcane-Fly/pantheon-chat.git
