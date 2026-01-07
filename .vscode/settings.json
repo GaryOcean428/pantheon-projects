@@ -1,0 +1,6 @@
+{
+	"claudeCode.allowDangerouslySkipPermissions": true,
+	"github.copilot.chat.claudeCode.debug": true,
+	"chat.useAgentSkills": true,
+	"github.copilot.chat.anthropic.tools.websearch.enabled": true
+}

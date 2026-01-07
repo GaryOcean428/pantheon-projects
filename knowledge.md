@@ -1,6 +1,6 @@
 # Project Knowledge
 
-This file gives Codebuff context about the pantheon-projects directory containing QIG-powered web applications.
+This file gives AI Agents context about the pantheon-projects directory containing QIG-powered web applications.
 
 ## Overview
 
