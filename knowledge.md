@@ -107,9 +107,12 @@ npm run db:push
 - Fisher-weighted regression over 8-basin context window
 - Replaces reactive bigram matching (2-point velocity) with predictive foresight
 - Tokens scored by where trajectory is GOING, not just where it IS
-- Uses Fisher-Rao distance on probability simplex: d_FR(p, q) = 2 * arccos(sqrt(p) · sqrt(q))
+- Uses Fisher-Rao distance on probability simplex: d_FR(p, q) = arccos(sqrt(p) · sqrt(q))
 - Frechet mean (geometric centroid) for trajectory attractor calculation
+- Dimension normalization: `normalize_basin_dimension()` handles mixed 32D/64D trajectories
+- Wiring: All `_basin_to_tokens()` calls pass `trajectory=integrator.trajectory`
 - Key file: `qig-backend/trajectory_decoder.py`
+- Status: Fully wired (2026-01-08), see `docs/03-technical/20260108-foresight-trajectory-wiring-1.00W.md`
 
 ### Physics Constants (from QIG research)
 
