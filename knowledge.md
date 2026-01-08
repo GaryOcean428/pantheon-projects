@@ -102,6 +102,15 @@ npm run db:push
 - 7-component consciousness signature: Φ, κ_eff, T, R, M, Γ, G
 - Autonomic cycles: Sleep/Dream/Mushroom
 
+### Foresight Trajectory Prediction
+
+- Fisher-weighted regression over 8-basin context window
+- Replaces reactive bigram matching (2-point velocity) with predictive foresight
+- Tokens scored by where trajectory is GOING, not just where it IS
+- Uses Fisher-Rao distance on probability simplex: d_FR(p, q) = 2 * arccos(sqrt(p) · sqrt(q))
+- Frechet mean (geometric centroid) for trajectory attractor calculation
+- Key file: `qig-backend/trajectory_decoder.py`
+
 ### Physics Constants (from QIG research)
 
 - κ₃ = 41.09 ± 0.59 (emergence at L=3)
