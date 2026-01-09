@@ -24,11 +24,11 @@ def connect_to_db(project: str) -> psycopg2.extensions.connection:
     env_path = f"/home/braden/Desktop/Dev/pantheon-projects/{project}/.env"
     if not os.path.exists(env_path):
         raise ValueError(f"No .env file found for {project}")
-    
+
     # Parse .env file for both DATABASE_URL and PG* variables
     db_url = None
     pg_vars = {}
-    
+
     with open(env_path) as f:
         for line in f:
             line = line.strip()
@@ -44,15 +44,15 @@ def connect_to_db(project: str) -> psycopg2.extensions.connection:
                 pg_vars['password'] = line.split('=', 1)[1].strip().strip('"').strip("'")
             elif line.startswith('PGPORT='):
                 pg_vars['port'] = line.split('=', 1)[1].strip().strip('"').strip("'")
-    
+
     # Try DATABASE_URL first
     if db_url:
         return psycopg2.connect(db_url)
-    
+
     # Fallback to PG* variables
     if pg_vars:
         return psycopg2.connect(**pg_vars)
-    
+
     raise ValueError(f"No DATABASE_URL or PG* variables found for {project}")
 
 
