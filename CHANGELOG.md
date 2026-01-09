@@ -16,6 +16,14 @@ This changelog tracks cross-project events, divergence points, and shared update
   - **Reduction:** 535 lines (8.6%)
   - **Commit:** `2c3f3658` pushed to Arcane-Fly/pantheon-chat master
 
+### Fixed: pantheon-replit StateObserver Initialization
+
+- **Issue:** TypeError in ocean-agent.ts constructor (line 323)
+- **Root Cause:** `updateNeurochemistry()` called before `stateObserver` initialized
+- **Fix Applied:** Moved `updateNeurochemistry()` call after module initialization
+- **Documentation:** `20260109-stateobserver-initialization-fix-v01F.md`
+- **Pattern:** Same fix as pantheon-chat Phase 5 (commit 2c3f3658)
+
 ### Phase 5 Integration Details
 
 - **Modules Integrated:**
