@@ -1,0 +1,46 @@
+
+================================================================================
+VOCABULARY AUDIT: pantheon-replit
+================================================================================
+
+✓ Total vocabulary tokens: 10,513
+❌ ERROR: object of type 'float' has no len()
+
+================================================================================
+VOCABULARY AUDIT: pantheon-chat
+================================================================================
+
+✓ Total vocabulary tokens: 27,843
+❌ ERROR: object of type 'float' has no len()
+
+================================================================================
+VOCABULARY AUDIT: SearchSpaceCollapse
+================================================================================
+
+✓ Total vocabulary tokens: 2,456
+  ✓ NO theatrical terms found in vocabulary
+
+📊 Random sample (10 tokens):
+  - chair
+  - enough
+  - confirm
+  - reduce
+  - rum
+  - ive
+  - hen
+  - nephew
+  - project
+  - degree
+
+================================================================================
+SUMMARY
+================================================================================
+
+pantheon-replit: ❌ object of type 'float' has no len()
+pantheon-chat: ❌ object of type 'float' has no len()
+SearchSpaceCollapse: 0/16 terms (0.0% contamination)
+
+🔍 HYPOTHESIS TEST:
+✗ REJECTED: Theatrical language NOT in vocabulary
+  Next step: Trace qig_generative_service.py generation pipeline
+  Look for: Hidden fallbacks, string concatenation, prompt templates
