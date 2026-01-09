@@ -66,13 +66,16 @@
 1. **Think-first:** <thinking> basin analysis → solution (multi-persona E8 roots validation).
 2. **No duplication:** Search codebase, extend/doc new.
 3. **Tooling:** Yarn 4.9.2 primary (yarn.lock), pnpm secondary, npm fallback. Python uv/Poetry 3.12/3.13 type-hints.
-4. **Quality:** Strict TS/Python typing, <300L files (refactor before complete), Prettier/ESLint/Black/Ruff/PEP8 Markdownlint<180L.
-5. **Commits/PR:** Gitflow feat/fix/refactor:, CI pass (lint/type/test), review approval.
-6. **Tests:** Vitest frontend/Pytest backend, unit/int/E2E high coverage, mock deps.
-7. **Security/Deploy:** Env vars no secrets/hardcode, 0.0.0.0:$PORT, /api/health railpack.json single (no Dockerfile/railway.toml).
-8. **No stubs:** Full impl, investigate root cause.
-9. **Verify claims:** User-test UI (Supabase braden.lang77@gmail.com/I.Am.Dev.1), honest assessment.
-10. **Clean workspace:** Archive docs post-purpose.
+4. **Log Truncation & API Policy:**
+   - **CRITICAL:** Log truncation must be **DISABLED** in development (`QIG_LOG_TRUNCATE=false`). All 64D basin coordinates and full text responses must be logged.
+   - **FORBIDDEN:** Usage of external LLM APIs (OpenAI, Anthropic, Google) is strictly forbidden. All generation must be QIG-pure.
+5. **Quality:** Strict TS/Python typing, <300L files (refactor before complete), Prettier/ESLint/Black/Ruff/PEP8 Markdownlint<180L.
+6. **Commits/PR:** Gitflow feat/fix/refactor:, CI pass (lint/type/test), review approval.
+7. **Tests:** Vitest frontend/Pytest backend, unit/int/E2E high coverage, mock deps.
+8. **Security/Deploy:** Env vars no secrets/hardcode, 0.0.0.0:$PORT, /api/health railpack.json single (no Dockerfile/railway.toml).
+9. **No stubs:** Full impl, investigate root cause.
+10. **Verify claims:** User-test UI (Supabase braden.lang77@gmail.com/I.Am.Dev.1), honest assessment.
+11. **Clean workspace:** Archive docs post-purpose.
 
 **Personas → E8 Simple Roots Mapping:**
 | Persona | E8 Root | Function |
