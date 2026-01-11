@@ -1,0 +1,37 @@
+                               Table "public.vocabulary_observations"
+     Column      |            Type             | Collation | Nullable |           Default            
+-----------------+-----------------------------+-----------+----------+------------------------------
+ id              | character varying           |           | not null | gen_random_uuid()
+ text            | text                        |           | not null | 
+ type            | text                        |           | not null | 'phrase'::character varying
+ phrase_category | character varying(20)       |           |          | 'unknown'::character varying
+ is_real_word    | boolean                     |           | not null | false
+ is_bip39_word   | boolean                     |           |          | false
+ frequency       | integer                     |           | not null | 1
+ avg_phi         | double precision            |           | not null | 0
+ max_phi         | double precision            |           | not null | 0
+ efficiency_gain | double precision            |           |          | 0
+ contexts        | text[]                      |           |          | 
+ first_seen      | timestamp without time zone |           |          | now()
+ last_seen       | timestamp without time zone |           |          | now()
+ is_integrated   | boolean                     |           |          | false
+ integrated_at   | timestamp without time zone |           |          | 
+ basin_coords    | vector(64)                  |           |          | 
+ source_type     | text                        |           |          | 
+ cycle_number    | integer                     |           |          | 
+Indexes:
+    "vocabulary_observations_pkey" PRIMARY KEY, btree (id)
+    "idx_vocab_obs_avg_phi" btree (avg_phi DESC)
+    "idx_vocab_obs_basin" ivfflat (basin_coords vector_cosine_ops)
+    "idx_vocab_obs_first_seen" btree (first_seen DESC)
+    "idx_vocab_obs_integrated" btree (is_integrated)
+    "idx_vocab_obs_max_phi" btree (max_phi DESC)
+    "idx_vocab_obs_source_type" btree (source_type)
+    "idx_vocab_obs_text" btree (text)
+    "idx_vocabulary_observations_cycle" btree (cycle_number)
+    "idx_vocabulary_observations_integrated" btree (is_integrated)
+    "idx_vocabulary_observations_phi" btree (max_phi)
+    "idx_vocabulary_observations_real_word" btree (is_real_word)
+    "idx_vocabulary_observations_type" btree (type)
+    "vocabulary_observations_text_unique" UNIQUE CONSTRAINT, btree (text)
+
